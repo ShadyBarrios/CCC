@@ -32,3 +32,17 @@
     opacity: 0;
     animation: fadeIn 1s ease-in forwards;
 }
+
+.bottom-right{
+    position:fixed;
+    right:0;
+    bottom:0;
+    z-index:1000;
+    height:18em;
+    width:auto;
+}
+
+.blend{
+    mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 70%);
+}
