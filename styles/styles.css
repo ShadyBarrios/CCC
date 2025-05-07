@@ -1,0 +1,29 @@
+.thumbnail{
+    height:50%;
+    width: 50%;
+    object-fit: cover;
+}
+
+.top-right{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.right-border{
+    border-right: 2px dashed black;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in{
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
