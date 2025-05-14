@@ -1,6 +1,6 @@
 .thumbnail{
-    height:50%;
-    width: 50%;
+    height:60%;
+    width: 60%;
     object-fit: cover;
     border: 1px solid black;
 }
@@ -42,7 +42,37 @@
     width:auto;
 }
 
+.bottom-left{
+    position:fixed;
+    left:0;
+    bottom:1em;
+    z-index:1000;
+    height:18em;
+    width:auto;
+}
+
 .blend{
     mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 70%);
     -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 70%);
+}
+
+.info-table{
+    display:flex;
+    justify-content:center;
+}
+
+header{
+    display:flex;
+    justify-content:center;
+}
+
+body{
+    font-family: "Underdog", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.25rem;
+}
+
+.calendar-columns{
+    width:33.33%;
 }
