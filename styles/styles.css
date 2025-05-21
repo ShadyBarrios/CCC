@@ -5,6 +5,13 @@
     border: 1px solid black;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  background: white;
+}
+
 .active{
     cursor: pointer;
 }
@@ -103,7 +110,7 @@ body{
   border-color: #000; 
 }
 
-.forms button:focus {
+/* .forms button:focus {
   outline: none; 
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2); 
 }
@@ -111,4 +118,4 @@ body{
 .forms button:active {
   background-color: #333; 
   border-color: #333; 
-}
+} */
