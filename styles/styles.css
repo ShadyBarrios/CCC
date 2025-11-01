@@ -23,12 +23,12 @@ body, html {
 }
 
 .right-border{
-    border-right: 2px dashed black;
+    border-right: 2px dotted black;
 }
 
 .bottom-border{
     padding-bottom: 15px;
-    border-bottom: 2px dashed black;
+    border-bottom: 2px groove black;
 }
 
 @keyframes fadeIn {
@@ -96,7 +96,6 @@ body{
 /* FORMS */
 .forms button {
   all: unset;
-  display: inline-block;
   padding: 1.75rem 3.5rem;
   border: 2px solid #000; 
   background-color: #000; 

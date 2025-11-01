@@ -21,16 +21,32 @@
         </div>
     </header>
     <body>
-        <h2 style="text-align:center; margin-top:0px">Event Calendar</h2>
-        <ul style="justify-items:center;">
-            <li>
-                <p><strong>XX/XX/XXXX</strong> - T.B.A</p>
-                <p>Waiting on a new shipment of ideas... contribute to the next issue of the CCC!</p>
-            </li>
-        </ul>
+        <table class="info-table" style="width:100%; table-layout:fixed;">
+            <tbody>
+                <tr>
+                    <td style="width:50%"><h2 style="text-align:center; margin-top:0px">Event Calendar</h2></td>
+                    <td style="width:15%; padding-left:0.2em"><h2 style="text-align:center; margin-top:0px">Forms</h2></td>
+                </tr>
+                <tr>
+                    <td style="width:80%">
+                        <ul style="justify-items:left;">
+                            <li>
+                                <p><strong>XX/XX/XXXX</strong> - T.B.A</p>
+                                <p>Waiting on a new shipment of ideas... Contribute to the next issue of the CCC!</p>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="forms" style="width:15%; text-align:center; padding-left:0.2em">
+                        <a href="https://forms.gle/AftphiL3f1j6Hdut5" target="_blank"><button>ZINE SUBMISSION</button></a>
+                        <div style="padding-top:0.5em; padding-bottom:0.5em;"><br></div>
+                        <a href="https://forms.gle/FB7hQwjP2V5gw97v6" target="_blank"><button>IDEA SUBMISSION</button></a>
+                    </td>      
+                </tr>
+            </tbody>
+        </table>
         <br>
         <h2 style="text-align:center; margin-bottom:0px">Zine Archive</h2>
-        <table class="info-table">
+        <table class="info-table" style="width:100%; table-layout:fixed">
             <tbody>
                 <!--First Row-->
                 <tr>
@@ -41,37 +57,37 @@
                         <h4>Vol. 2</h4>
                     </td>
                 </tr>
-                <tr>
-                    <td style="text-align:center;" class="right-border"> 
+                <tr >
+                    <td style="text-align:center;" class="bottom-border"> 
                         <img src="images/volume_one_thumbnail.png" class="active thumbnail" onclick="viewPDF(1)">
+                        <div>Art: <a href="https://www.instagram.com/hunnie.roo/">hunnie.roo</a></div>
                     </td>
-                    <td style="text-align:center;">
-                        <img src="images/volume_two_thumbnail.jpg" class="active thumbnail" onclick="viewPDF(2)">
+                    <td style="text-align:center;" class="bottom-border">
+                        <img src="images/volume_two_thumbnail.png" class="active thumbnail" onclick="viewPDF(2)">
+                        <div>Art: <a href="https://www.instagram.com/hunnie.roo/">hunnie.roo</a></div>
                     </td>
                 </tr>
                 <!--Second Row-->
                 <tr>
-                    <td style="text-align:center;" class="right-border">
-                        <h4>The Nightmare will <span class="flicker-slow">Continue</span>...</h4>
+                    <td style="text-align:center;">
+                        <h4>The Nightmare</h4>
+                    </td>
+                    <td style="text-align:center;">
+                        <h4>will <span class="flicker-slow">Continue</span>...</h4>
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align:center;" class="right-border">
+                    <td style="text-align:center;" >
+                        <img src="images/unknown.png" class="thumbnail">
+                    </td>
+                    <td style="text-align:center;">
                         <img src="images/unknown.png" class="thumbnail">
                     </td>
                 </tr>
             </tbody>
         </table>
         <br>
-        <h2 style="text-align:center; margin-bottom:0.5rem">Forms</h2>
-        <table class="info-table forms">
-            <tbody>
-                <tr>
-                    <td><a href="https://forms.gle/AftphiL3f1j6Hdut5" target="_blank"><button style="margin-right:1.5em">ZINE SUBMISSION</button></a></td>
-                    <td><a href="https://forms.gle/FB7hQwjP2V5gw97v6" target="_blank"><button style="margin-left:1.5em">IDEA SUBMISSION</button></a></td>
-                </tr>
-            </tbody>
-        </table>
+
 
         <script src="scripts/animate.js"></script>
         <script src="scripts/secret.js"></script>
@@ -79,6 +95,7 @@
     </body>
     <footer>
         <a href="https://www.instagram.com/ccc.ucr/" target="_blank"><img alt="icon" src="images/instagram.png" class="bottom-left icon" style="height:6em"></a>
-        <img src="images/ShadyWasHere.png" alt="icon" class="bottom-right" style="height:8em">
+        <audio src="soundbytes/Whip It!.mp3" id="WhipItAudio"></audio>
+        <button onclick="toggleAudio('WhipItAudio')" style="cursor:pointer"><img src="images/ShadyWasHere.png" alt="icon" class="bottom-right" style="height:12em"></button>
     </footer>
 </html>
