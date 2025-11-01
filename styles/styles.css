@@ -26,6 +26,11 @@ body, html {
     border-right: 2px dashed black;
 }
 
+.bottom-border{
+    padding-bottom: 15px;
+    border-bottom: 2px dashed black;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
