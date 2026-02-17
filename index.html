@@ -21,50 +21,16 @@
         </div>
     </header>
     <body>
+        <!--EVENTS-->
         <h2 style="text-align:center; margin-top:0px">Event Calendar</h2>
         <ul style="justify-items:center;">
             <li>
                 <p><strong>XX/XX/XXXX</strong> - T.B.A</p>
-                <p>Waiting on a new shipment of ideas... contribute to the next issue of the CCC, Vol. 3!</p>
+                <p>Waiting on a new shipment of ideas... contribute to the next issue of the CCC - Vol. 4!</p>
             </li>
         </ul>
-        <br>
-        <h2 style="text-align:center; margin-bottom:0px">Zine Archive</h2>
-        <table class="info-table" style="width:100%; table-layout:fixed">
-            <tbody>
-                <!--First Row-->
-                <tr>
-                    <td style="text-align:center;">
-                        <h3>Vol. 1</h3>
-                    </td>
-                    <td style="text-align:center;">
-                        <h4>Vol. 2</h3>
-                    </td>
-                </tr>
-                <tr >
-                    <td style="text-align:center;"> 
-                        <img src="images/volume_one_thumbnail.png" class="active thumbnail" onclick="viewPDF(1)">
-                        <div>Art: <a href="https://www.instagram.com/hunnie.roo/">hunnie.roo</a></div>
-                    </td>
-                    <td style="text-align:center;">
-                        <img src="images/volume_two_thumbnail.png" class="active thumbnail" onclick="viewPDF(2)">
-                        <div>Art: <a href="https://www.instagram.com/hunnie.roo/">hunnie.roo</a></div>
-                    </td>
-                </tr>
-                <!--Second Row-->
-                <tr>
-                    <td style="text-align:center;">
-                        <h3>Vol. 3</h3>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align:center;"> 
-                        <img src="images/unknown.png" class="active thumbnail" onclick="viewPDF(3)">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
+
+        <!--FORMS-->
         <h2 style="text-align:center; margin-bottom:0.5rem">Forms</h2>
         <table class="info-table forms">
             <tbody>
@@ -75,7 +41,52 @@
             </tbody>
         </table>
 
+        <!--ARCHIVE-->
+        <h2 style="text-align:center; margin-bottom:0px">Zine Archive</h2>
+        <table class="info-table" style="width:100%; table-layout:fixed">
+            <tbody>
+                <!--First Row-->
+                <tr class="archive-labels">
+                    <td style="text-align:center;">
+                        <h3>Vol. 1</h3>
+                    </td>
+                    <td style="text-align:center;">
+                        <h3>Vol. 2</h3>
+                    </td>
+                </tr>
+                <tr >
+                    <td style="text-align:center;"> 
+                        <img src="images/volume_one_thumbnail.png" class="active thumbnail" onclick="viewPDF(1)">
+                    </td>
+                    <td style="text-align:center;">
+                        <img src="images/volume_two_thumbnail.png" class="active thumbnail" onclick="viewPDF(2)">
+                    </td>
+                </tr>
+                <!--Second Row-->
+                <tr class="archive-label">
+                    <td style="text-align:center;">
+                        <h3>Vol. 3</h3>
+                    </td>
+                    <td style="text-align:center;">
+                        <h3>Vol. 4</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;"> 
+                        <img src="images/volume_three_thumbnail.png" class="active thumbnail" onclick="viewPDF(3)">
+                    </td>
+                    <td style="text-align:center;">
+                        <img src="images/unknown.png" class="thumbnail">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
 
+        <!--CREDITS-->
+        <div style="text-align:center;">Art: <a href="https://www.instagram.com/hunnie.roo/">hunnie.roo</a></div>
+        
+        <!--SCRIPTS-->
         <script src="scripts/animate.js"></script>
         <script src="scripts/secret.js"></script>
         <script src="scripts/general.js"></script>

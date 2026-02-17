@@ -77,6 +77,10 @@ body, html {
     justify-content:center;
 }
 
+.archive-labels h3{
+    margin-bottom:0.25em;
+}
+
 header{
     display:flex;
     justify-content:center;
