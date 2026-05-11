@@ -118,6 +118,19 @@ body{
   border-color: #000; 
 }
 
+.videos{
+    width: 50%;
+    height: auto;
+    display: block;
+    border: 2px solid black;
+    border-radius:8px;
+    margin: 1rem auto;
+}
+
+.videos-cells{
+    text-align:center;
+}
+
 /* .forms button:focus {
   outline: none; 
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2); 

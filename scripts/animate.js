@@ -12,6 +12,20 @@ function flicker_fast() {
     setTimeout(flicker_fast, randomInterval);
 }
 
+const medTexts = document.querySelectorAll(".flicker-medium");
+
+function flicker_medium(){
+    medTexts.forEach(text =>
+        {
+            const randomOpacity = Math.random() * (1 - 0.3) + 0.3;  
+            text.style.opacity = randomOpacity;
+        }
+        )
+    
+        const randomInterval = Math.random() * (300-100)+100;
+        setTimeout(flicker_medium, randomInterval);
+}
+
 const slowTexts = document.querySelectorAll(".flicker-slow");
 
 function flicker_slow(){
@@ -27,4 +41,5 @@ function flicker_slow(){
 }
 
 flicker_fast();
+flicker_medium();
 flicker_slow();
