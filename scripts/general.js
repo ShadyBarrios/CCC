@@ -1,4 +1,4 @@
-const editions = {1: "volume_one.pdf", 2: "volume_two.pdf", 3: "volume_three.pdf"}
+const editions = {1: "volume_one.pdf", 2: "volume_two.pdf", 3: "volume_three.pdf", 4: "volume_four.pdf"}
 function viewPDF(edition){
     if(edition in editions)
         window.open("zines/" + editions[edition], "_blank");
