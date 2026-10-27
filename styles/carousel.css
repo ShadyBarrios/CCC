@@ -174,35 +174,37 @@
     cursor: not-allowed;
 }
 
-/* Mobile View - Compact container fitting snugly around components */
+/* Mobile View - Larger text & buttons with zero-whitespace compact fit */
 @media (max-width: 600px) {
     .carousel-container {
-        height: fit-content !important; /* Wrapper shrinks tightly to fit contents */
+        height: fit-content !important;
         min-height: 0 !important;
         max-height: none !important;
-        padding: 0 !important;          /* Zero top/bottom dead space */
+        padding: 0 !important;
         margin: 0 auto !important;
         gap: 0 !important;
         justify-content: flex-start !important;
         overflow: hidden;
     }
 
-    /* Keep text tight without changing font sizes */
     .text-container {
         padding: 0 12px;
         margin: 0 !important;
     }
 
+    /* Increased text size with crisp line heights */
     .top-text {
-        font-size: 1.1rem;
-        line-height: 1.1;
+        font-size: 2rem !important;   /* Increased from 1.1rem */
+        line-height: 1.15;
+        font-weight: 700;
         margin: 0 !important;
         padding: 0 !important;
     }
 
     .bottom-text {
-        font-size: 0.85rem;
-        line-height: 1.1;
+        font-size: 1.5rem !important;  /* Increased from 0.85rem */
+        line-height: 1.15;
+        font-weight: 600;
         margin: 0 !important;
         padding: 0 !important;
     }
@@ -210,17 +212,17 @@
     /* Stage height locked directly to item bounds without shrinking images */
     .carousel-stage {
         width: 100%;
-        height: 220px !important;    /* Preserves full image component height */
+        height: 220px !important;
         min-height: 220px !important;
         max-height: 220px !important;
-        flex: none !important;        /* Prevents stage from stretching vertically */
+        flex: none !important;
         margin: 0 !important;
     }
 
     /* Preserve card size and maintain full image resolution */
     .carousel-item {
         width: 65vw;
-        height: 220px !important;   /* Full card height maintained */
+        height: 220px !important;
         max-width: 240px;
         max-height: 220px;
     }
@@ -246,17 +248,121 @@
         display: none !important;
     }
 
-    /* Controls glued directly beneath bottom text */
+    /* Controls: Larger, high-contrast mobile buttons */
     .controls-container {
-        margin-top: 4px !important;
-        margin-bottom: 0 !important;
+        margin-top: 6px !important;
+        margin-bottom: 4px !important;
         padding: 0 !important;
-        gap: 28px;
+        gap: 32px;                      /* Wide separation between Prev & Next */
     }
 
     .nav-btn {
-        padding: 10px 24px;          /* Preserves full button touch size */
-        font-size: 1rem;
+        padding: 12px 30px !important;  /* Enlarged padding (was 10px 24px) */
+        font-size: 1.15rem !important;  /* Enlarged font (was 1.0rem) */
+        font-weight: 700;
+        border-radius: 8px;
+    }
+}
+/* ==========================================
+   MOBILE VIEW (Fixed Overlap & Clean Spacing)
+   ========================================== */
+
+@media (max-width: 600px) {
+    .carousel-container {
+        height: fit-content !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 8px 0 !important;
+        margin-top:2rem !important;
+        gap: 0 !important;
+        justify-content: flex-start !important;
+        overflow: hidden;
+    }
+
+    .text-container {
+        padding: 0 16px;
+        margin: 0 !important;
+        position: relative;
+        z-index: 2; /* Keeps text layered cleanly above stage transitions */
+    }
+
+    /* Text sizes with controlled line height */
+    .top-text {
+        font-size: 2rem !important;
+        line-height: 1.2;
+        font-weight: 700;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .bottom-text {
+        font-size: 1.05rem !important;
+        line-height: 1.2;
+        font-weight: 600;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Stage Area - Vertical margin & internal padding prevent scale overflow */
+    .carousel-stage {
+        width: 100%;
+        height: 320px !important;       /* Height adjusted to accommodate card + scale */
+        min-height: 320px !important;
+        max-height: 320px !important;
+        flex: none !important;
+        margin: 16px 0 !important;       /* Added clearance above and below stage */
+        padding: 12px 0 !important;      /* Extra vertical room for scale(1.08) expansion */
+        box-sizing: border-box;
+    }
+
+    /* Card dimensions adjusted to fit within stage height including scale */
+    .carousel-item {
+        width: 68vw;
+        height: 280px !important;      /* Base card height before scale(1.08) = ~302px total */
+        max-width: 280px;
+        max-height: 280px;
+    }
+
+    /* Scaled center card fits within the 320px padded stage */
+    .carousel-item.is-center {
+        transform: translateX(0) scale(1.08);
+    }
+
+    /* Side bleed effect keeping side items visible off edge */
+    .carousel-item.is-left {
+        transform: translateX(-76%) scale(0.82);
+        filter: blur(3px);
+        opacity: 0.6;
+    }
+
+    .carousel-item.is-right {
+        transform: translateX(76%) scale(0.82);
+        filter: blur(3px);
+        opacity: 0.6;
+    }
+
+    /* Phantom bound items completely hidden */
+    .carousel-item.is-hidden-left,
+    .carousel-item.is-hidden-right {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        display: none !important;
+    }
+
+    /* Controls container with z-index to stay above stage transformations */
+    .controls-container {
+        position: relative;
+        z-index: 2;
+        margin-top: 8px !important;
+        margin-bottom: 4px !important;
+        padding: 0 !important;
+        gap: 32px;
+    }
+
+    .nav-btn {
+        padding: 12px 32px !important;
+        font-size: 1.15rem !important;
+        font-weight: 700;
         border-radius: 8px;
     }
 }
