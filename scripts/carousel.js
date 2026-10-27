@@ -32,7 +32,7 @@ function generateCarouselItemHTML(idx) {
 document.addEventListener("DOMContentLoaded", function () {
     const num_of_zines = 4;
 
-    const carouselItemsHTML = Array.from({ length: num_of_zines }, (_, i) => generateCarouselItemHTML(i)).join("");
+    const carouselItemsHTML = Array.from({ length: num_of_zines }, (_, i) => generateCarouselItemHTML(num_of_zines - 1 -i)).join("");
     document.getElementById("carousel-stage").innerHTML = carouselItemsHTML;
 
     const items = Array.from(document.querySelectorAll(".carousel-item"));
