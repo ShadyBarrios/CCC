@@ -140,6 +140,9 @@ body{
     text-align:center;
 }
 
+.bottom-caption-container{
+    margin-top:3vh;
+}
 /* .forms button:focus {
   outline: none; 
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.2); 
@@ -193,7 +196,7 @@ body{
         width: 80%;
     }
 
-    .text-area{
-        margin:auto 8px;
+    .bottom-caption-container{
+        margin:1vh auto;
     }
 }

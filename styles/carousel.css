@@ -67,6 +67,7 @@
                 visibility 0.4s;
     cursor: pointer;
     user-select: none;
+    pointer-events:none;
 }
 
 .carousel-item a {
@@ -76,15 +77,19 @@
     width: 100%;
     height: 100%;
     text-decoration: none;
+    pointer-events:none;
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
+    max-width:100%;
+    max-height:100%;
     object-fit: contain;
     display: block;
-    border-radius: 8px;
-    filter: drop-shadow(0 1vh 2vh rgba(0, 0, 0, 0.18));
+    border-radius: 4px;
+    filter: drop-shadow(0 1vh 2vh rgba(0, 0, 0, .3));
+    pointer-events:auto;
 }
 
 /* Position States & Transformations */
@@ -106,7 +111,7 @@
     transform: translateX(-70%) scale(0.8);
     filter: blur(4px);
     opacity: 0.65;
-    z-index: 5;
+    z-index: 20;
     visibility: visible;
     pointer-events: auto;
 }
@@ -115,7 +120,7 @@
     transform: translateX(70%) scale(0.8);
     filter: blur(4px);
     opacity: 0.65;
-    z-index: 5;
+    z-index: 20;
     visibility: visible;
     pointer-events: auto;
 }
@@ -148,7 +153,7 @@
 }
 
 .nav-btn {
-    padding: clamp(10px, 1.8vh, 16px) clamp(24px, 3.5vw, 48px);
+    padding: clamp(10px, 1.8vh, 48px) clamp(24px, 3.5vw, 48px);
     font-size: clamp(1rem, 2.2vh, 1.35rem);
     font-weight: 600;
     border: 2px solid #cccccc;
@@ -261,7 +266,7 @@
     .controls-container {
         position: relative;
         z-index: 2;
-        margin-top: 8px !important;
+        margin-top: 4px !important;
         margin-bottom: 4px !important;
         padding: 0 !important;
         gap: 32px;
