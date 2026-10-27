@@ -5,11 +5,11 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 84vh; /* Increased from 80vh */
+    height: 84vh;
     max-height: 84vh;
     box-sizing: border-box;
     overflow: hidden;
-    gap: 1vh; /* Slightly increased section gap */
+    gap: 1vh;
 }
 
 /* Text Display Areas Above & Below Carousel */
@@ -63,7 +63,8 @@
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
                 filter 0.4s ease, 
                 opacity 0.4s ease,
-                z-index 0.4s step-end;
+                z-index 0.4s step-end,
+                visibility 0.4s;
     cursor: pointer;
     user-select: none;
 }
@@ -92,10 +93,12 @@
     filter: blur(0px);
     opacity: 1;
     z-index: 10 !important;
+    visibility: visible;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
                 filter 0.4s ease, 
                 opacity 0.4s ease,
-                z-index 0s;
+                z-index 0s,
+                visibility 0s;
     pointer-events: auto;
 }
 
@@ -104,6 +107,7 @@
     filter: blur(4px);
     opacity: 0.65;
     z-index: 5;
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -112,6 +116,7 @@
     filter: blur(4px);
     opacity: 0.65;
     z-index: 5;
+    visibility: visible;
     pointer-events: auto;
 }
 
@@ -120,6 +125,7 @@
     filter: blur(8px);
     opacity: 0;
     z-index: 1;
+    visibility: hidden;
     pointer-events: none;
 }
 
@@ -128,6 +134,7 @@
     filter: blur(8px);
     opacity: 0;
     z-index: 1;
+    visibility: hidden;
     pointer-events: none;
 }
 
@@ -135,7 +142,7 @@
 .controls-container {
     display: flex;
     gap: 1.5vw;
-    margin-top: clamp(12px, 2.5vh, 28px); /* Increased spacing above buttons */
+    margin-top: clamp(12px, 2.5vh, 28px);
     margin-bottom: 0.5vh;
     flex-shrink: 0;
 }
@@ -167,71 +174,89 @@
     cursor: not-allowed;
 }
 
-/* Mobile View - Maximized screen coverage with edge bleed */
+/* Mobile View - Compact container fitting snugly around components */
 @media (max-width: 600px) {
-    /* Container takes up almost the full vertical screen space */
     .carousel-container {
-        height: 85vh;
-        max-height: 85vh;
-        padding: 8px 0; /* Removed horizontal padding to allow edge bleed */
-        gap: 0;
-        justify-content: space-between;
-        overflow: hidden; /* Clips the bleeding side images cleanly */
+        height: fit-content !important; /* Wrapper shrinks tightly to fit contents */
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 0 !important;          /* Zero top/bottom dead space */
+        margin: 0 auto !important;
+        gap: 0 !important;
+        justify-content: flex-start !important;
+        overflow: hidden;
     }
 
-    /* Text areas scaled for high visibility without stealing vertical room */
+    /* Keep text tight without changing font sizes */
     .text-container {
-        padding: 0 16px;
+        padding: 0 12px;
+        margin: 0 !important;
     }
 
     .top-text {
-        font-size: 1.3rem;
-        margin-bottom: 2px;
+        font-size: 1.1rem;
+        line-height: 1.1;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .bottom-text {
-        font-size: 1rem;
-        margin-top: 2px;
+        font-size: 0.85rem;
+        line-height: 1.1;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    /* Stage Area takes maximum available vertical screen height */
+    /* Stage height locked directly to item bounds without shrinking images */
     .carousel-stage {
         width: 100%;
-        flex: 1;
-        max-height: 65vh;
+        height: 220px !important;    /* Preserves full image component height */
+        min-height: 220px !important;
+        max-height: 220px !important;
+        flex: none !important;        /* Prevents stage from stretching vertically */
+        margin: 0 !important;
     }
 
-    /* Large Cards - Width exceeds side margins to force the bleed effect */
+    /* Preserve card size and maintain full image resolution */
     .carousel-item {
-        width: 72vw;       /* Large hero card size */
-        height: 52vh;      /* Fills most of the vertical stage */
-        max-width: 300px;
-        max-height: 400px;
+        width: 65vw;
+        height: 220px !important;   /* Full card height maintained */
+        max-width: 240px;
+        max-height: 220px;
     }
 
-    /* Side items shift outward so they clip off the screen edges */
+    /* Side items bleed off screen bounds */
     .carousel-item.is-left {
-        transform: translateX(-78%) scale(0.82);
-        filter: blur(3px);
+        transform: translateX(-74%) scale(0.85);
+        filter: blur(2px);
         opacity: 0.55;
     }
 
     .carousel-item.is-right {
-        transform: translateX(78%) scale(0.82);
-        filter: blur(3px);
+        transform: translateX(74%) scale(0.85);
+        filter: blur(2px);
         opacity: 0.55;
     }
 
-    /* Controls: Large, easy-tap buttons separated horizontally */
+    /* Completely eliminate hidden phantom items on edges */
+    .carousel-item.is-hidden-left,
+    .carousel-item.is-hidden-right {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        display: none !important;
+    }
+
+    /* Controls glued directly beneath bottom text */
     .controls-container {
-        margin-top: 6px;
-        margin-bottom: 10px;
-        gap: 32px; /* Generous gap between Prev and Next buttons */
+        margin-top: 4px !important;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+        gap: 28px;
     }
 
     .nav-btn {
-        padding: 12px 30px;
-        font-size: 1.15rem;
+        padding: 10px 24px;          /* Preserves full button touch size */
+        font-size: 1rem;
         border-radius: 8px;
     }
 }
