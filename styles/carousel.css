@@ -8,7 +8,7 @@
     height: 84vh;
     max-height: 84vh;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
     gap: 1vh;
 }
 
@@ -50,6 +50,7 @@
     align-items: center;
     perspective: 1200px;
     z-index: 1;
+    overflow:visible;
 }
 
 /* Individual Carousel Item Container */
@@ -68,6 +69,7 @@
     cursor: pointer;
     user-select: none;
     pointer-events:none;
+    overflow:visible;
 }
 
 .carousel-item a {
@@ -78,6 +80,7 @@
     height: 100%;
     text-decoration: none;
     pointer-events:none;
+    overflow:visible;
 }
 
 .carousel-item img {
