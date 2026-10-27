@@ -1,4 +1,5 @@
 const artists = {1:"Joey", 2:"Joey", 3:"Joey", 4:"Simon"}
+const release_dates = {1:"Spring '25", 2:"Fall '25", 3:"Winter '26", 4:"Spring '26"}
 const thumbnails = {1: "volume_one_thumbnail.png", 2: "volume_two_thumbnail.png", 3: "volume_three_thumbnail.png", 4: "volume_four_thumbnail.png"}
 
 /*
@@ -12,7 +13,7 @@ const thumbnails = {1: "volume_one_thumbnail.png", 2: "volume_two_thumbnail.png"
 function generateCarouselItemHTML(idx) {
   const zine_num = idx + 1;
 
-  return `<div class="carousel-item" data-index="${idx}" data-top="Vol. ${zine_num}" data-bottom="Art: ${artists[zine_num]}">
+  return `<div class="carousel-item" data-index="${idx}" data-top="Vol. ${zine_num}" data-bottom="${release_dates[zine_num]} - Art: ${artists[zine_num]}">
     <a href="zines/${editions[zine_num]}" target="_blank" rel="noopener noreferrer">
         <img src="images/${thumbnails[zine_num]}" alt="Vol. ${zine_num} Cover">
     </a>

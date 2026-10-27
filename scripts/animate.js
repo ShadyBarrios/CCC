@@ -17,12 +17,12 @@ const medTexts = document.querySelectorAll(".flicker-medium");
 function flicker_medium(){
     medTexts.forEach(text =>
         {
-            const randomOpacity = Math.random() * (1 - 0.3) + 0.3;  
+            const randomOpacity = Math.random() * (1 - 0.6) + 0.6;  
             text.style.opacity = randomOpacity;
         }
         )
     
-        const randomInterval = Math.random() * (300-100)+100;
+        const randomInterval = Math.random() * (300 - 100) + 100;
         setTimeout(flicker_medium, randomInterval);
 }
 
