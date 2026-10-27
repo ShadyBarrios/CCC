@@ -1,0 +1,237 @@
+/* Carousel Wrapper - Expanded height with clean vertical rhythm */
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 84vh; /* Increased from 80vh */
+    max-height: 84vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    gap: 1vh; /* Slightly increased section gap */
+}
+
+/* Text Display Areas Above & Below Carousel */
+.text-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    flex-shrink: 0;
+}
+
+.top-text {
+    font-size: clamp(1.25rem, 2.8vh, 2rem);
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.1;
+    margin-bottom: 2px;
+}
+
+.bottom-text {
+    font-size: clamp(1rem, 2.2vh, 1.4rem);
+    font-weight: 500;
+    color: #555555;
+    line-height: 1.1;
+    margin-top: 2px;
+}
+
+/* Stage Area - Takes available vertical space cleanly */
+.carousel-stage {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    max-height: 56vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+    z-index: 1;
+}
+
+/* Individual Carousel Item Container */
+.carousel-item {
+    position: absolute;
+    width: clamp(230px, 38vw, 480px);
+    height: clamp(280px, 50vh, 540px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                filter 0.4s ease, 
+                opacity 0.4s ease,
+                z-index 0.4s step-end;
+    cursor: pointer;
+    user-select: none;
+}
+
+.carousel-item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 8px;
+    filter: drop-shadow(0 1vh 2vh rgba(0, 0, 0, 0.18));
+}
+
+/* Position States & Transformations */
+.carousel-item.is-center {
+    transform: translateX(0) scale(1.08);
+    filter: blur(0px);
+    opacity: 1;
+    z-index: 10 !important;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                filter 0.4s ease, 
+                opacity 0.4s ease,
+                z-index 0s;
+    pointer-events: auto;
+}
+
+.carousel-item.is-left {
+    transform: translateX(-70%) scale(0.8);
+    filter: blur(4px);
+    opacity: 0.65;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+.carousel-item.is-right {
+    transform: translateX(70%) scale(0.8);
+    filter: blur(4px);
+    opacity: 0.65;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+.carousel-item.is-hidden-left {
+    transform: translateX(-140%) scale(0.5);
+    filter: blur(8px);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.carousel-item.is-hidden-right {
+    transform: translateX(140%) scale(0.5);
+    filter: blur(8px);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Controls Layout & Increased Separation */
+.controls-container {
+    display: flex;
+    gap: 1.5vw;
+    margin-top: clamp(12px, 2.5vh, 28px); /* Increased spacing above buttons */
+    margin-bottom: 0.5vh;
+    flex-shrink: 0;
+}
+
+.nav-btn {
+    padding: clamp(10px, 1.8vh, 16px) clamp(24px, 3.5vw, 48px);
+    font-size: clamp(1rem, 2.2vh, 1.35rem);
+    font-weight: 600;
+    border: 2px solid #cccccc;
+    background-color: #ffffff;
+    color: #333333;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease, opacity 0.2s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background-color: #f4f4f4;
+    border-color: #888888;
+    transform: translateY(-2px);
+}
+
+.nav-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.nav-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+/* Mobile View - Maximized screen coverage with edge bleed */
+@media (max-width: 600px) {
+    /* Container takes up almost the full vertical screen space */
+    .carousel-container {
+        height: 85vh;
+        max-height: 85vh;
+        padding: 8px 0; /* Removed horizontal padding to allow edge bleed */
+        gap: 0;
+        justify-content: space-between;
+        overflow: hidden; /* Clips the bleeding side images cleanly */
+    }
+
+    /* Text areas scaled for high visibility without stealing vertical room */
+    .text-container {
+        padding: 0 16px;
+    }
+
+    .top-text {
+        font-size: 1.3rem;
+        margin-bottom: 2px;
+    }
+
+    .bottom-text {
+        font-size: 1rem;
+        margin-top: 2px;
+    }
+
+    /* Stage Area takes maximum available vertical screen height */
+    .carousel-stage {
+        width: 100%;
+        flex: 1;
+        max-height: 65vh;
+    }
+
+    /* Large Cards - Width exceeds side margins to force the bleed effect */
+    .carousel-item {
+        width: 72vw;       /* Large hero card size */
+        height: 52vh;      /* Fills most of the vertical stage */
+        max-width: 300px;
+        max-height: 400px;
+    }
+
+    /* Side items shift outward so they clip off the screen edges */
+    .carousel-item.is-left {
+        transform: translateX(-78%) scale(0.82);
+        filter: blur(3px);
+        opacity: 0.55;
+    }
+
+    .carousel-item.is-right {
+        transform: translateX(78%) scale(0.82);
+        filter: blur(3px);
+        opacity: 0.55;
+    }
+
+    /* Controls: Large, easy-tap buttons separated horizontally */
+    .controls-container {
+        margin-top: 6px;
+        margin-bottom: 10px;
+        gap: 32px; /* Generous gap between Prev and Next buttons */
+    }
+
+    .nav-btn {
+        padding: 12px 30px;
+        font-size: 1.15rem;
+        border-radius: 8px;
+    }
+}

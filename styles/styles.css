@@ -10,6 +10,11 @@ body, html {
   background: white;
 }
 
+#logo{
+    overflow:hidden;
+    height:5rem
+}
+
 .active{
     cursor: pointer;
 }
@@ -87,6 +92,8 @@ header{
     display:flex;
     justify-content:center;
 }
+
+
 
 body{
     font-family: "Underdog", system-ui;

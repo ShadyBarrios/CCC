@@ -6,6 +6,7 @@
         <meta name="Author" content="All of Us">
         <meta name="Description" content="To archive the CCC">
         <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/carousel.css">
 
         <!--Google Fonts, Underdog font-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,18 +16,46 @@
     <header>
         <!--<button class="top-right" id="secret_button">SECRET</button>-->
         <div class="fade-in" style="text-align: center; margin-top:0px">
-            <h1 style="display: inline-flex; align-items: center; margin-bottom:0px; margin-top:0px;">
-                The<img alt="icon" style="height:4em; vertical-align:middle;" src="images/CCC Icon - Transparent - Clipped.png" class="flicker-medium"></div>
+            <h1 style="display: inline-flex; align-items: center; margin-bottom:0px; margin-top:0px; padding-top:1rem;">
+                <img alt="icon" style="height:1.5em; vertical-align:middle;" src="images/CCC Icon - Transparent.png" class="flicker-medium"></div>
+                
             </h1>
         </div>
     </header>
     <body>
+        <div class="carousel-container">
+            <!-- Top Associated Text Area -->
+            <div class="text-container">
+                <div id="top-text" class="top-text">Loading...</div>
+            </div>
+
+            <!-- Carousel Stage showing focused PNG + side items -->
+            <div class="carousel-stage" id="carousel-stage">
+
+            </div>
+
+
+            
+            <div class="text-container">
+            <div id="bottom-text" class="bottom-text"></div>
+            </div>
+
+            
+            <!-- Scroll Controls -->
+            <div class="controls-container">
+                <button id="prev-btn" class="nav-btn" aria-label="Previous Option"><</button>
+                <button id="next-btn" class="nav-btn" aria-label="Next Option">></button>
+            </div>
+        </div>
+
+        <br>
+
         <!--EVENTS-->
         <h2 style="text-align:center; margin-top:0px">Event Calendar</h2>
         <ul style="justify-items:center;">
             <li>
                 <p><strong>XX/XX/XXXX</strong> - T.B.A</p>
-                <p>Waiting on a new shipment of ideas... contribute to the next issue of the CCC - Vol. 4!</p>
+                <p>Waiting on a new shipment of ideas... contribute to the next issue of the CCC - Vol. 5!</p>
             </li>
         </ul>
 
@@ -55,10 +84,12 @@
         </table>
 
         <!--ZINE ARCHIVE-->
+        <!--
         <h2 style="text-align:center; margin-bottom:0px">Zine Archive</h2>
         <table class="info-table">
-            <tbody>
+            <tbody>-->
                 <!--First Row-->
+                <!--
                 <tr class="archive-labels">
                     <td style="text-align:center;">
                         <h3>Vol. 1</h3>
@@ -75,7 +106,9 @@
                         <img src="images/volume_two_thumbnail.png" class="active thumbnail" onclick="viewPDF(2)">
                     </td>
                 </tr>
+                
                 <!--Second Row-->
+                <!--
                 <tr class="archive-labels">
                     <td style="text-align:center;">
                         <h3>Vol. 3</h3>
@@ -94,15 +127,14 @@
                 </tr>
             </tbody>
         </table>
-        <br>
+        -->
 
-        <!--CREDITS-->
-        <div style="text-align:center;">Art: Joey (1/2/3) | Simon (4)</div>
-        
+
         <!--SCRIPTS-->
         <script src="scripts/animate.js"></script>
         <script src="scripts/secret.js"></script>
         <script src="scripts/general.js"></script>
+        <script src="scripts/carousel.js"></script>
     </body>
     <!--
     <footer>
