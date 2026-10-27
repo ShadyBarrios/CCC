@@ -2,15 +2,6 @@ const artists = {1:"Joey", 2:"Joey", 3:"Joey", 4:"Simon"}
 const thumbnails = {1: "volume_one_thumbnail.png", 2: "volume_two_thumbnail.png", 3: "volume_three_thumbnail.png", 4: "volume_four_thumbnail.png"}
 
 /*
-
-<div class="carousel-item" data-index="0" data-top="Option 1: Emerald Gem" data-bottom="Click image to visit Gem Details">
-    <a href="https://example.com/gem" target="_blank" rel="noopener noreferrer">
-    <img src="https://placehold.co/220x220/2ecc71/ffffff.png?text=PNG+1" alt="Option 1 PNG">
-    </a>
-</div>
-*/
-
-/*
 <div class="carousel-item" data-index=i data-top=`Vol. {i+1}` data-bottom=`Art: {artists[i+1]}`>
     <a href=`zines/{editions[i+1]}` target="_blank" rel="noopener noreferrer">
     <img src=`images/{thumbsnails[i+1]}` alt=`Vol. {i+1} Cover`>
@@ -30,9 +21,9 @@ function generateCarouselItemHTML(idx) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const num_of_zines = 4;
+    const num_of_zines = Object.keys(thumbnails).length;
 
-    const carouselItemsHTML = Array.from({ length: num_of_zines }, (_, i) => generateCarouselItemHTML(num_of_zines - 1 -i)).join("");
+    const carouselItemsHTML = Array.from({ length: num_of_zines }, (_, i) => generateCarouselItemHTML(num_of_zines - 1 - i)).join("");
     document.getElementById("carousel-stage").innerHTML = carouselItemsHTML;
 
     const items = Array.from(document.querySelectorAll(".carousel-item"));

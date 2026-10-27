@@ -175,6 +175,7 @@
 }
 
 @media (max-width: 600px) {
+
     .carousel-container {
         height: fit-content !important;
         min-height: 0 !important;
@@ -183,7 +184,7 @@
         margin-top:2rem !important;
         gap: 0 !important;
         justify-content: flex-start !important;
-        overflow: hidden;
+        overflow:hidden;
     }
 
     .text-container {
