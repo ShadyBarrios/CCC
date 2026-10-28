@@ -107,18 +107,19 @@
     transition-duration: 0.4s, 0.4s, 0.4s, 0s, 0s;
 }
 
-.carousel-item.is-left {
-    transform: translateX(-70%) scale(0.8);
+.carousel-item.is-left,
+.carousel-item.is-right {
     filter: blur(4px);
     opacity: 0.65;
     z-index: 20;
 }
 
+.carousel-item.is-left {
+    transform: translateX(-70%) scale(0.8);
+}
+
 .carousel-item.is-right {
     transform: translateX(70%) scale(0.8);
-    filter: blur(4px);
-    opacity: 0.65;
-    z-index: 20;
 }
 
 
@@ -126,7 +127,7 @@
 .carousel-item.is-hidden-left {
     filter: blur(8px);
     opacity: 0;
-    visibility: hidden;
+    pointer-events: none;
 }
 
 .carousel-item.is-hidden-left{
@@ -246,11 +247,6 @@
         transform: translateX(76%) scale(0.82);
         filter: blur(3px);
         opacity: 0.6;
-    }
-
-    .carousel-item.is-hidden-left,
-    .carousel-item.is-hidden-right {
-        display: none !important;
     }
 
     .controls-container {
