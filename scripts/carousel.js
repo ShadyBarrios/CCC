@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to update item positioning classes and text
     function updateCarousel() {
-    items.forEach((item, index) => {
-        // Remove all state classes
-        item.classList.remove("is-center", "is-left", "is-right", "is-hidden-left", "is-hidden-right");
+        items.forEach((item, index) => {
+            // Remove all state classes
+            item.classList.remove("is-center", "is-left", "is-right", "is-hidden-left", "is-hidden-right");
 
-        if (index === currentIndex) {
+            if (index === currentIndex) {
         item.classList.add("is-center");
         } else if (index === currentIndex - 1) {
         item.classList.add("is-left");

@@ -89,6 +89,7 @@
     display: block;
     border-radius: 4px;
     filter: drop-shadow(0 1vh 2vh rgba(0, 0, 0, .3));
+    will-change: transform, filter; /* trying to fix ios clipping on shadow */
 }
 
 /* Position States & Transformations */
