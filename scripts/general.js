@@ -1,3 +1,5 @@
+import { editions } from "./dicts.js";
+
 function viewPDF(edition){
     if(edition in editions)
         window.open("zines/" + editions[edition], "_blank");

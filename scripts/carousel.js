@@ -1,3 +1,5 @@
+import { editions, release_dates, thumbnails, artists } from "./dicts.js";
+
 /*
 <div class="carousel-item" data-index=i data-top=`Vol. {i+1}` data-bottom=`Art: {artists[i+1]}`>
     <a href=`zines/{editions[i+1]}` target="_blank" rel="noopener noreferrer">
