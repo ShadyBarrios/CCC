@@ -1,7 +1,3 @@
-const artists = {1:"Joey", 2:"Joey", 3:"Joey", 4:"Simon"}
-const release_dates = {1:"Spring '25", 2:"Fall '25", 3:"Winter '26", 4:"Spring '26"}
-const thumbnails = {1: "volume_one_thumbnail.png", 2: "volume_two_thumbnail.png", 3: "volume_three_thumbnail.png", 4: "volume_four_thumbnail.png"}
-
 /*
 <div class="carousel-item" data-index=i data-top=`Vol. {i+1}` data-bottom=`Art: {artists[i+1]}`>
     <a href=`zines/{editions[i+1]}` target="_blank" rel="noopener noreferrer">
