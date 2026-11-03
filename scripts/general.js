@@ -1,4 +1,4 @@
-import { editions } from "./dicts.js";
+const editions = {1: "volume_one.pdf", 2: "volume_two.pdf", 3: "volume_three.pdf", 4: "volume_four.pdf", 5: "volume_five.pdf"}
 
 function viewPDF(edition){
     if(edition in editions)
